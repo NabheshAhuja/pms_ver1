@@ -6,7 +6,7 @@
             </div>
         </a>
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-            {{ __('Creative Tim') }}
+            {{ __(Auth::user()->name) }}
         </a>
     </div>
     <div class="sidebar-wrapper">
@@ -21,7 +21,7 @@
                 <a data-toggle="collapse" aria-expanded="true" href="#laravelExamples">
                     <i class="nc-icon"><img src="{{ asset('paper/img/laravel.svg') }}"></i>
                     <p>
-                            {{ __('Laravel examples') }}
+                        {{ __('Laravel examples') }}
                         <b class="caret"></b>
                     </p>
                 </a>
@@ -63,7 +63,7 @@
             <li class="{{ $elementActive == 'tables' ? 'active' : '' }}">
                 <a href="{{ route('page.index', 'tables') }}">
                     <i class="nc-icon nc-tile-56"></i>
-                    <p>{{ __('Table List') }}</p>
+                    <p>{{ __('Manage Tasks') }}</p>
                 </a>
             </li>
             <li class="{{ $elementActive == 'typography' ? 'active' : '' }}">

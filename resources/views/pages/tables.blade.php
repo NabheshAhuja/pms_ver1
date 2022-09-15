@@ -1,10 +1,14 @@
 @extends('layouts.app', [
     'class' => '',
-    'elementActive' => 'tables'
+    'elementActive' => 'tables',
 ])
-
 @section('content')
-    <div class="content">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+    {{-- <div class="content">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -262,5 +266,34 @@
                 </div>
             </div>
         </div>
+    </div> --}}
+
+    <div class="container">
+        <h3 text-center>Task Assignment and assign status to task</h3>
+        {{-- </div>
+    <div class="container"> --}}
+        <table class="table table-bordered" id="table_11">
+            <thead>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#table_11").DataTable()
+        })
+    </script>
 @endsection

@@ -1,4 +1,4 @@
-<footer class="footer footer-black  footer-white ">
+{{-- <footer class="footer footer-black  footer-white ">
     <div class="container-fluid">
         <div class="row">
             <nav class="footer-nav">
@@ -33,7 +33,7 @@
                         class="@if (Auth::guest()) text-white @endif" target="_blank"
                         href="https://updivision.com">{{ __('UPDIVISION') }}</a>
                 </span>
-            </div> --}}
-        </div>
-    </div>
-</footer>
+            </div>
+</div>
+</div>
+</footer> --}}
