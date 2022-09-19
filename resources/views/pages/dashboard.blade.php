@@ -1,6 +1,6 @@
 @extends('layouts.app', [
     'class' => '',
-    'elementActive' => 'dashboard'
+    'elementActive' => 'dashboard',
 ])
 
 @section('content')
@@ -17,9 +17,9 @@
                             </div>
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
-                                    <p class="card-category">Capacity</p>
-                                    <p class="card-title">150GB
-                                        <p>
+                                    <p class="card-category">Open Projects</p>
+                                    <p class="card-title">$countData->open_projects
+                                    <p>
                                 </div>
                             </div>
                         </div>
@@ -43,9 +43,9 @@
                             </div>
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
-                                    <p class="card-category">Revenue</p>
-                                    <p class="card-title">$ 1,345
-                                        <p>
+                                    <p class="card-category">Pending Projects</p>
+                                    <p class="card-title">$countData->pending_projects
+                                    <p>
                                 </div>
                             </div>
                         </div>
@@ -69,9 +69,9 @@
                             </div>
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
-                                    <p class="card-category">Errors</p>
+                                    <p class="card-category">Projects on Hold</p>
                                     <p class="card-title">23
-                                        <p>
+                                    <p>
                                 </div>
                             </div>
                         </div>
@@ -95,9 +95,9 @@
                             </div>
                             <div class="col-7 col-md-8">
                                 <div class="numbers">
-                                    <p class="card-category">Followers</p>
-                                    <p class="card-title">+45K
-                                        <p>
+                                    <p class="card-category">Closed Projects</p>
+                                    <p class="card-title">
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -115,8 +115,8 @@
             <div class="col-md-12">
                 <div class="card ">
                     <div class="card-header ">
-                        <h5 class="card-title">Users Behavior</h5>
-                        <p class="card-category">24 Hours performance</p>
+                        <h5 class="card-title">Rejected Projects</h5>
+                        <p class="card-category"></p>
                     </div>
                     <div class="card-body ">
                         <canvas id=chartHours width="400" height="100"></canvas>

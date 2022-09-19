@@ -1,5 +1,6 @@
-const mix = require('laravel-mix');
-
+const mix = require("laravel-mix");
+require("datatables.net-dt")();
+require("datatables.net-rowreorder-dt")();
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -11,6 +12,6 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js("resources/js/app.js", "public/js")
     .vue()
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass("resources/sass/app.scss", "public/css");
