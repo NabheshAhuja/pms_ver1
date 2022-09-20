@@ -60,8 +60,8 @@
                     <p>{{ __('Notifications') }}</p>
                 </a>
             </li>
-            <li>
-                <a href="{{ route('page.index', 'task') }}">
+            <li class="{{ $elementActive == 'task' ? 'active' : '' }}">
+                <a href="{{ route('page.index'), 'task' }}">
                     <i class="nc-icon nc-tile-56"></i>
                     <p>{{ __('Manage Tasks') }}</p>
                 </a>

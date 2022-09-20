@@ -56,7 +56,8 @@ The above copyright notice and this permission notice shall be included in all c
 
     <!--   Core JS Files   -->
 
-
+    <link rel="stylesheet" href="/style1.css">
+    <script src="/script.js"></script>
 
     <script src="{{ asset('paper') }}/js/core/jquery.min.js"></script>
     <script src="{{ asset('paper') }}/js/core/popper.min.js"></script>
@@ -76,16 +77,6 @@ The above copyright notice and this permission notice shall be included in all c
     <script src="{{ asset('paper') }}/demo/jquery.sharrre.js"></script>
 
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
-
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-
-
-
-    @stack('scripts')
-
-    @include('layouts.navbars.fixed-plugin-js')
-</body>
+    < @stack('scripts') @include('layouts.navbars.fixed-plugin-js') </body>
 
 </html>
