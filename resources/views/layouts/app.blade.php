@@ -41,6 +41,8 @@ The above copyright notice and this permission notice shall be included in all c
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{ asset('paper') }}/demo/demo.css" rel="stylesheet" />
 
+    @stack('styles')
+
 </head>
 
 <body class="{{ $class }}">
@@ -55,9 +57,11 @@ The above copyright notice and this permission notice shall be included in all c
     @endguest
 
     <!--   Core JS Files   -->
+    {{-- <script src="https://code.jquery.com/jquersy-3.6.0.js"></script> --}}
+    {{-- <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('paper') }}/resources/demos/style.css"> --}}
 
-
-
+    {{-- <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script> --}}
     <script src="{{ asset('paper') }}/js/core/jquery.min.js"></script>
     <script src="{{ asset('paper') }}/js/core/popper.min.js"></script>
     <script src="{{ asset('paper') }}/js/core/bootstrap.min.js"></script>
@@ -75,11 +79,13 @@ The above copyright notice and this permission notice shall be included in all c
     <!-- Sharrre libray -->
     <script src="{{ asset('paper') }}/demo/jquery.sharrre.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/jquery-ui-sortable@1.0.0/jquery-ui.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    {{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" /> --}}
+
+    {{-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+    {{-- <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script> --}}
 
 
 

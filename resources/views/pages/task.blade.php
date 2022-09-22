@@ -1,65 +1,95 @@
-{{-- @extends('layouts.app', [
+@extends('layouts.app', [
     'class' => '',
     'elementActive' => 'tasks',
-]) --}}
+])
 
-<ul style=float:left>
-    <li class="dropzone" id='0' draggable="true">List item 1</li>
-</ul>
-<ul style=float:left>
-    <li class="dropzone" id='1' draggable="true">List item 2</li>
-</ul>
+@section('content')
+    <br><br><br><br>
 
-<ul style=float:left>
-    <li class="dropzone" id='2' draggable="true">List item 3</li>
-</ul>
-<ul style=float:left>
-    <li class="dropzone" id='3' draggable="true">List item 4</li>
-</ul>
-<ul style=float:left>
-    <li class="dropzone" id='4' draggable="true">List item 5</li>
-</ul>
-
-<script>
-    let dragged;
-    let id;
-    let index;
-    let indexDrop;
-    let list;
-
-    document.addEventListener("dragstart", ({
-        target
-    }) => {
-        dragged = target;
-        id = target.id;
-        list = target.parentNode.children;
-        for (let i = 0; i < list.length; i += 1) {
-            if (list[i] === dragged) {
-                index = i;
+    @push('styles')
+        <style>
+            #sortable1,
+            #sortable2 {
+                border: 1px solid #eee;
+                width: 142px;
+                min-height: 20px;
+                list-style-type: none;
+                margin: 0;
+                padding: 5px 0 0 0;
+                float: left;
+                margin-right: 10px;
             }
-        }
-    });
 
-    document.addEventListener("dragover", (event) => {
-        event.preventDefault();
-    });
+            #sortable1 li,
+            #sortable2 li {
+                margin: 0 5px 5px 5px;
+                padding: 5px;
+                font-size: 1.2em;
+                width: 120px;
+            }
+        </style>
+    @endpush
 
-    document.addEventListener("drop", ({
-        target
-    }) => {
-        if (target.className == "dropzone" && target.id !== id) {
-            dragged.remove(dragged);
-            for (let i = 0; i < list.length; i += 1) {
-                if (list[i] === target) {
-                    indexDrop = i;
-                }
+
+    <div class="form-group mb-4">
+        <label for="tasks">Add Tasks</label>
+        <input type="text" class="form-control mb-4" id="tasks" placeholder="add Tasks">
+        <input type="button" value="add task" id="add">
+    </div>
+
+    <ul id="sortable1" class="connectedSortable">
+        <h4 style="text-align:center">Assigned</h4>
+
+    </ul>
+
+
+
+
+    <ul id="sortable1" class="connectedSortable">
+        <h4 style="text-align:center">ToDo</h4>
+
+    </ul>
+
+
+    <ul id="sortable1" class="connectedSortable">
+        <h4 style="text-align:center">In Progress</h4>
+
+    </ul>
+    <ul id="sortable1" class="connectedSortable">
+        <h4 style="text-align:center">Rejected </h4>
+
+    </ul>
+    <ul id="sortable1" class="connectedSortable">
+        <h4 style="text-align:center">Finished</h4>
+
+    </ul>
+
+    @push('scripts')
+        <script>
+            $(function() {
+                $("#sortable1, #sortable2").sortable({
+                    connectWith: ".connectedSortable"
+
+                }).disableSelection();
+            });
+            (function($) {
+                $('#myform').submit(function(e) {
+                    var val = $('#tasks').val();
+                    $('ul.sortable1').append('<li>' + val + '</li>');
+                    e.preventDefault();
+                });
+            });
+        </script>
+
+        <script>
+            document.getElementById("add").onclick = function() {
+
+                var node = document.createElement("Li");
+                var text = document.getElementById("tasks").value;
+                var textnode = document.createTextNode(text);
+                node.appendChild(textnode);
+                a = document.getElementById("sortable1").appendChild(node);
             }
-            console.log(index, indexDrop);
-            if (index > indexDrop) {
-                target.before(dragged);
-            } else {
-                target.after(dragged);
-            }
-        }
-    });
-</script>
+        </script>
+    @endpush
+@endsection

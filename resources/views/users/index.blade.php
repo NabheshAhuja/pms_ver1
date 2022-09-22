@@ -166,7 +166,7 @@ The above copyright notice and this permission notice shall be included in all c
                         <a data-toggle="collapse" aria-expanded="true" href="#laravelExamples">
                             <i class="nc-icon"><img src="{{ asset('paper/img/laravel.svg') }}"></i>
                             <p>
-                                {{ __('Laravel examples') }}
+                                {{ __('Users') }}
                                 <b class="caret"></b>
                             </p>
                         </a>
@@ -174,13 +174,13 @@ The above copyright notice and this permission notice shall be included in all c
                             <ul class="nav">
                                 <li>
                                     <a href="{{ route('profile.edit') }}">
-                                        <span class="sidebar-mini-icon">{{ __('UP') }}</span>
+                                        <span class="nc-icon nc-circle-10"></span>
                                         <span class="sidebar-normal">{{ __(' User Profile ') }}</span>
                                     </a>
                                 </li>
                                 <li class="active">
                                     <a href="{{ route('page.index', 'user') }}">
-                                        <span class="sidebar-mini-icon">{{ __('U') }}</span>
+                                        <i class="nc-icon nc-circle-10"></i>
                                         <span class="sidebar-normal">{{ __(' User Management ') }}</span>
                                     </a>
                                 </li>
@@ -188,35 +188,12 @@ The above copyright notice and this permission notice shall be included in all c
                         </div>
                     </li>
                     <li>
-                        <a href="{{ route('page.index', 'icons') }}">
-                            <i class="nc-icon nc-diamond"></i>
-                            <p>{{ __('Icons') }}</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('page.index', 'map') }}">
-                            <i class="nc-icon nc-pin-3"></i>
-                            <p>{{ __('Maps') }}</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('page.index', 'notifications') }}">
-                            <i class="nc-icon nc-bell-55"></i>
-                            <p>{{ __('Notifications') }}</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('page.index', 'tables') }}">
+                        <a href="{{ route('page.index', 'task') }}">
                             <i class="nc-icon nc-tile-56"></i>
-                            <p>{{ __('Table List') }}</p>
+                            <p>{{ __('Manage Tasks') }}</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ route('page.index', 'typography') }}">
-                            <i class="nc-icon nc-caps-small"></i>
-                            <p>{{ __('Typography') }}</p>
-                        </a>
-                    </li>
+
                     {{-- <li class="active-pro {{ $elementActive == 'upgrade' ? 'active' : '' }}">
                                 <a href="{{ route('page.index', 'upgrade') }}" class="bg-danger">
                                     <i class="nc-icon nc-spaceship text-white"></i>
