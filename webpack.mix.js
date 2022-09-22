@@ -1,6 +1,5 @@
 const mix = require("laravel-mix");
-require("datatables.net-dt")();
-require("datatables.net-rowreorder-dt")();
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management

@@ -7,24 +7,23 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-        public function index()
+       public function index()
     {
-        $tasks = Tasks::orderBy('order','ASC')->get();
+        $tasks = auth()->user()->statuses()->with('tasks')->get();
 
-        return view('task',compact('tasks'));
+        return view('tasks.index', compact('tasks'));
     }
-    public function update(Request $request)
-    {
-        $tasks = Tasks::all();
 
-        foreach ($tasks as $task) {
-            foreach ($request->order as $order) {
-                if ($order['id'] == $task->id) {
-                    $task->update(['order' => $order['position']]);
-                }
-            }
-        }
+public function store(Request $request)
+{
+    $this->validate($request, [
+        'title' => ['required', 'string', 'max:56'],
+        'description' => ['required', 'string'],
+        'status_id' => ['required', 'exists:statuses,id']
+    ]);
 
-        return response('Update Successfully.', 200);
-    }
+    return $request->user()
+        ->tasks()
+        ->create($request->only('title', 'description', 'status_id'));
+}
 }

@@ -9,6 +9,14 @@ class Tasks extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'Future Tasks', 'ToDo', 'In Progress', 'Testing', 'Done'
-    ];
+        'title', 'description', 'order', 'status_id'];
+        public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
+    }
 }
