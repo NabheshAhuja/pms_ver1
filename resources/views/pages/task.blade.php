@@ -9,7 +9,7 @@
     @push('styles')
         <style>
             #sortable1,
-            #sortable2 {
+            #sortable2,#sortable3, #sortable4, #sortable5 {
                 border: 1px solid #eee;
                 width: 142px;
                 min-height: 20px;
@@ -17,12 +17,16 @@
                 margin: 0;
                 padding: 5px 0 10px 0;
                 float: left;
-                margin-right: 80px;
+                margin-right: 60px;
             }
 
 
             #sortable1 li,
-            #sortable2 li {
+            #sortable2 li,
+            #sortable3 li,
+            #sortable4 li,
+            #sortable5 li
+             {
                 margin: 0 5px 5px 5px;
                 padding: 5px;
                 font-size: 1.2em;
@@ -45,29 +49,29 @@
                 </h4>
             </ul>
 
-            <ul id="sortable1" class="connectedSortable">
-                <h4 style="text-align:center">ToDo<input type="button" value="+" id="add"
+            <ul id="sortable2" class="connectedSortable">
+                <h4 style="text-align:left">&nbsp;&nbsp;ToDo<input type="button" value="+" id="add"
                         onclick="added('todo')">
                     <input type="button" value="-" id="hidee" onclick="hiddens()">
                 </h4>
             </ul>
 
 
-            <ul id="sortable1" class="connectedSortable">
-                <h4 style="text-align:center">Progress<input type="button" value="+" id="add"
+            <ul id="sortable3" class="connectedSortable">
+                <h4 style="text-align:left">Progress<input type="button" value="+" id="add"
                         onclick="added('Progress')"> <input type="button" value="-" id="hidee"
                         onclick="hiddens()">
                 </h4>
 
             </ul>
-            <ul id="sortable1" class="connectedSortable">
-                <h4 style="text-align:center">Rejected<input type="button" value="+" id="add"
+            <ul id="sortable4" class="connectedSortable">
+                <h4 style="text-align:left">Rejected<input type="button" value="+" id="add"
                         onclick="added('rejected')">
                     <input type="button" value="-" id="hidee" onclick="hiddens()">
                 </h4>
 
             </ul>
-            <ul id="sortable1" class="connectedSortable">
+            <ul id="sortable5" class="connectedSortable">
                 <h4 style="text-align:center">Finished<input type="button" value="+" id="add"
                         onclick="added('finished')">
                     <input type="button" value="-" id="hidee" onclick="hiddens()">
@@ -90,7 +94,7 @@
                 $('#any').hide();
             });
             $(function() {
-                $("#sortable1, #sortable2").sortable({
+                $("#sortable1, #sortable2,#sortable3,#sortable4,#sortable5").sortable({
                     connectWith: ".connectedSortable"
 
                 }).disableSelection();
@@ -99,18 +103,54 @@
 
         <script>
             var listName = "";
-            $(document).ready(function() {
-                $('#sortable1').hide();
-            });
+            // $(document).ready(function() {
+            //     $('#sortable1,#sortable2,#sortable3,#sortable4,#sortable5').hide();
+            // });
 
             function addd(add) {
 
-                console.log(listName);
+                // console.log(listName);
+                if (listName == "future") {
+                    
                 var node = document.createElement("Li");
                 var text = document.getElementById("tasks").value;
                 var textnode = document.createTextNode(text);
                 node.appendChild(textnode);
-                document.getElementById("sortable1").appendChild(node);
+                document.getElementById("sortable1").appendChild(node);    
+                }
+                else if (listName == "todo") {
+                    
+                var node = document.createElement("Li");
+                var text = document.getElementById("tasks").value;
+                var textnode = document.createTextNode(text);
+                node.appendChild(textnode);
+                document.getElementById("sortable2").appendChild(node);    
+                }
+                else if (listName == "progress") {
+                    
+                var node = document.createElement("Li");
+                var text = document.getElementById("tasks").value;
+                var textnode = document.createTextNode(text);
+                node.appendChild(textnode);
+                document.getElementById("sortable3").appendChild(node);    
+                }
+                else if (listName == "rejected") {
+                    
+                var node = document.createElement("Li");
+                var text = document.getElementById("tasks").value;
+                var textnode = document.createTextNode(text);
+                node.appendChild(textnode);
+                document.getElementById("sortable4").appendChild(node);    
+                }
+                else if (listName == "finished") {
+                    
+                var node = document.createElement("Li");
+                var text = document.getElementById("tasks").value;
+                var textnode = document.createTextNode(text);
+                node.appendChild(textnode);
+                document.getElementById("sortable5").appendChild(node);    
+                }
+                
             }
 
             function added(listNameParameter) {

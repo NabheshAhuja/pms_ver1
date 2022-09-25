@@ -1,4 +1,4 @@
-@extends('layouts.app', [
+{{-- @extends('layouts.app', [
     'class' => '',
     'elementActive' => 'map'
 ])
@@ -26,4 +26,4 @@
             demo.initGoogleMaps();
         });
   </script>
-@endpush
+@endpush --}}
