@@ -140,7 +140,11 @@
                 var text = document.getElementById("tasks").value;
                 var textnode = document.createTextNode(text);
                 node.appendChild(textnode);
-                document.getElementById("sortable4").appendChild(node);    
+                   
+                var node1 = document.createElement("input");
+                node1.type = "button";
+                node1.value = "+";
+                document.getElementById("sortable4").appendChild(node).appendChild(node1);
                 }
                 else if (listName == "finished") {
                     
@@ -176,7 +180,7 @@
 
             // node1.type = "button";
             // node1.value = "+";
-            // node1.onclick = grp();
+            
             // var node2 = document.createElement("div");
             // node2.class = "dropdown";
             // var btn = document.createElement("button");
